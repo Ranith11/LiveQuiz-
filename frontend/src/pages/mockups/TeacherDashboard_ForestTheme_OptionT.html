@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherDashboard - Forest Theme T (Steps Guide)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --p: #22c55e;
+            --pd: #16a34a;
+            --bgl: #f0fdf4;
+            --bgm: #dcfce7;
+            --td: #14532d;
+            --tm: #166534;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bgl);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 48px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            background: var(--p);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--td);
+        }
+
+        .title small {
+            font-size: 13px;
+            color: var(--tm);
+            margin-left: 8px;
+        }
+
+        .user-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .username {
+            font-weight: 600;
+            color: var(--td);
+        }
+
+        .logout {
+            padding: 10px 20px;
+            background: var(--bgl);
+            border: none;
+            border-radius: 10px;
+            color: var(--tm);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .main {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 28px 48px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin: 0 0 20px 0;
+            color: var(--td);
+        }
+
+        .card h4 {
+            font-size: 14px;
+            margin: 18px 0 10px 0;
+            color: var(--tm);
+            font-weight: 600;
+        }
+
+        .input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid var(--bgm);
+            border-radius: 12px;
+            font-size: 14px;
+            background: #fff;
+            color: var(--td);
+            outline: none;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            background: var(--p);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 12px;
+            border-radius: 8px;
+        }
+
+        .btn-light {
+            background: var(--bgl);
+            color: var(--tm);
+        }
+
+        .btn-red {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--bgm);
+            margin: 20px 0;
+        }
+
+        .quiz-list {
+            list-style: none;
+            flex: 1;
+        }
+
+        .quiz-item {
+            padding: 18px;
+            background: #fff;
+            border: 1.5px solid var(--bgm);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--p);
+        }
+
+        .quiz-title {
+            font-weight: 700;
+            color: var(--td);
+            font-size: 15px;
+        }
+
+        .quiz-meta {
+            font-size: 12px;
+            color: var(--tm);
+            margin-top: 4px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--bgm);
+            color: var(--pd);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-draft {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .quiz-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        /* EMPTY STATE WITH STEPS */
+        .empty-state {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .steps-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--td);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bgl);
+            border-radius: 14px;
+            transition: all 0.2s;
+        }
+
+        .step-item:hover {
+            background: var(--bgm);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--p);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--td);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--tm);
+            line-height: 1.5;
+        }
+
+        .step-arrow {
+            color: var(--p);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="brand">
+            <div class="logo">LQ</div>
+            <div class="title">LiveQuiz+ <small>Teacher</small></div>
+        </div>
+        <div class="user-area"><span class="username">Hello, TeacherName 👋</span><button class="logout">Logout</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="grid">
+            <div class="card">
+                <h3>Create a new Quiz Room</h3>
+                <input type="text" class="input" placeholder="Quiz title">
+                <input type="number" class="input" placeholder="Quiz Duration (in minutes)">
+                <button class="btn">Create Quiz Room</button>
+                <hr class="divider">
+                <h4>Your quizzes</h4>
+                <ul class="quiz-list">
+                    <li class="quiz-item">
+                        <div class="quiz-title">Mathematics Quiz</div>
+                        <div class="quiz-meta">Created: 12/5/2024, 3:30 PM</div>
+                        <div class="quiz-meta">Questions: 5 • Code: <strong>ABC123</strong></div>
+                        <div class="quiz-actions"><span class="badge">live</span><button
+                                class="btn btn-sm btn-red">Finish</button><button class="btn btn-sm btn-light">Manage
+                                Quiz</button><button class="btn btn-sm">Responses</button><button
+                                class="btn btn-sm">Live Results</button></div>
+                    </li>
+                    <li class="quiz-item">
+                        <div class="quiz-title">Science Quiz</div>
+                        <div class="quiz-meta">Created: 12/4/2024, 2:15 PM</div>
+                        <div class="quiz-meta">Questions: 3 • Code: <strong>XYZ789</strong></div>
+                        <div class="quiz-actions"><span class="badge badge-draft">draft</span><button
+                                class="btn btn-sm btn-light">Make live</button><button
+                                class="btn btn-sm btn-light">Manage Quiz</button><button class="btn btn-sm">Live
+                                Results</button></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Getting Started</h3>
+                <div class="empty-state">
+                    <div class="steps-title">How to run a live quiz</div>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">Create a Quiz Room</div>
+                                <div class="step-desc">Enter a title and click "Create Quiz Room" on the left panel.
+                                </div>
+                            </div>
+                            <div class="step-arrow">→</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">Manage & Add Questions</div>
+                                <div class="step-desc">Click "Manage Quiz" to add questions with multiple choice
+                                    options.</div>
+                            </div>
+                            <div class="step-arrow">→</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">Make it Live</div>
+                                <div class="step-desc">Click "Make live" and share the quiz code with your students.
+                                </div>
+                            </div>
+                            <div class="step-arrow">→</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <div class="step-title">Monitor Responses</div>
+                                <div class="step-desc">Click "Responses" to see real-time student answers!</div>
+                            </div>
+                            <div class="step-arrow">🎉</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

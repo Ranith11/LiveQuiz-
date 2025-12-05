@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizPlayer Design Mockups</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #1e293b;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 40px 0 12px 0;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+        }
+
+        .mockup {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        /* Common Styles */
+        .header {
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .timer {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .student-name {
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .question-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .question-card {
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .q-number {
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .q-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            border-radius: 14px;
+            padding: 18px 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            padding: 16px 24px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        /* ===== DESIGN 1: Soft Blue ===== */
+        .d1 {
+            background: linear-gradient(180deg, #b8d5dd 0%, #e8f7fc 80%, #d6e0e6 100%);
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d1 .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 150, 180, 0.1);
+        }
+
+        .d1 .timer {
+            background: linear-gradient(135deg, #5dd9d2, #3ecdc6);
+            color: white;
+        }
+
+        .d1 .student-name {
+            color: #1a3a4a;
+        }
+
+        .d1 .logout-btn {
+            background: white;
+            color: #5a7a8a;
+            border: 1px solid rgba(0, 150, 180, 0.2);
+        }
+
+        .d1 .question-card {
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 150, 180, 0.1);
+        }
+
+        .d1 .q-number {
+            color: #3ecdc6;
+        }
+
+        .d1 .q-text {
+            color: #0d5c6d;
+        }
+
+        .d1 .option {
+            background: #f8fcfd;
+            border-color: rgba(0, 150, 180, 0.15);
+            color: #1a3a4a;
+        }
+
+        .d1 .option:hover {
+            border-color: #3ecdc6;
+            background: #f0fffe;
+        }
+
+        .d1 .option.selected {
+            border-color: #3ecdc6;
+            background: linear-gradient(135deg, #e0fffe, #f0fffe);
+        }
+
+        .d1 .nav-btn {
+            background: white;
+            color: #5a7a8a;
+            border: 1px solid rgba(0, 150, 180, 0.2);
+        }
+
+        .d1 .nav-btn:hover {
+            border-color: #3ecdc6;
+            color: #3ecdc6;
+        }
+
+        .d1 .submit-btn {
+            background: linear-gradient(135deg, #5dd9d2, #3ecdc6);
+            color: white;
+            box-shadow: 0 6px 20px rgba(62, 205, 198, 0.35);
+        }
+
+        /* ===== DESIGN 2: Dark Mode ===== */
+        .d2 {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d2 .header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid #334155;
+        }
+
+        .d2 .timer {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: white;
+        }
+
+        .d2 .student-name {
+            color: #e2e8f0;
+        }
+
+        .d2 .logout-btn {
+            background: #334155;
+            color: #94a3b8;
+        }
+
+        .d2 .question-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+
+        .d2 .q-number {
+            color: #38bdf8;
+        }
+
+        .d2 .q-text {
+            color: #f1f5f9;
+        }
+
+        .d2 .option {
+            background: #0f172a;
+            border-color: #334155;
+            color: #e2e8f0;
+        }
+
+        .d2 .option:hover {
+            border-color: #38bdf8;
+        }
+
+        .d2 .option.selected {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .d2 .nav-btn {
+            background: #334155;
+            color: #94a3b8;
+        }
+
+        .d2 .nav-btn:hover {
+            background: #475569;
+            color: #e2e8f0;
+        }
+
+        .d2 .submit-btn {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: white;
+        }
+
+        /* ===== DESIGN 3: Minimal White ===== */
+        .d3 {
+            background: #f8fafc;
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d3 .header {
+            background: white;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .d3 .timer {
+            background: #0f172a;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .d3 .student-name {
+            color: #1e293b;
+        }
+
+        .d3 .logout-btn {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .d3 .question-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .d3 .q-number {
+            color: #64748b;
+        }
+
+        .d3 .q-text {
+            color: #0f172a;
+        }
+
+        .d3 .option {
+            background: #f8fafc;
+            border-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .d3 .option:hover {
+            border-color: #0f172a;
+        }
+
+        .d3 .option.selected {
+            border-color: #0f172a;
+            background: #f1f5f9;
+        }
+
+        .d3 .nav-btn {
+            background: #f1f5f9;
+            color: #64748b;
+            border-radius: 8px;
+        }
+
+        .d3 .nav-btn:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .d3 .submit-btn {
+            background: #0f172a;
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* ===== DESIGN 4: Purple Gradient ===== */
+        .d4 {
+            background: linear-gradient(135deg, #ede9fe 0%, #fae8ff 50%, #fdf4ff 100%);
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d4 .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .d4 .timer {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+            color: white;
+        }
+
+        .d4 .student-name {
+            color: #4c1d95;
+        }
+
+        .d4 .logout-btn {
+            background: white;
+            color: #7c3aed;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .d4 .question-card {
+            background: white;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.1);
+        }
+
+        .d4 .q-number {
+            color: #8b5cf6;
+        }
+
+        .d4 .q-text {
+            color: #4c1d95;
+        }
+
+        .d4 .option {
+            background: #faf5ff;
+            border-color: rgba(139, 92, 246, 0.15);
+            color: #4c1d95;
+        }
+
+        .d4 .option:hover {
+            border-color: #8b5cf6;
+            background: #f5f3ff;
+        }
+
+        .d4 .option.selected {
+            border-color: #8b5cf6;
+            background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+        }
+
+        .d4 .nav-btn {
+            background: white;
+            color: #7c3aed;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .d4 .nav-btn:hover {
+            border-color: #8b5cf6;
+        }
+
+        .d4 .submit-btn {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+            color: white;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+        }
+
+        /* ===== DESIGN 5: Green Fresh ===== */
+        .d5 {
+            background: linear-gradient(180deg, #d1fae5 0%, #ecfdf5 100%);
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d5 .header {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .d5 .timer {
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: white;
+        }
+
+        .d5 .student-name {
+            color: #064e3b;
+        }
+
+        .d5 .logout-btn {
+            background: white;
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .d5 .question-card {
+            background: white;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
+        }
+
+        .d5 .q-number {
+            color: #10b981;
+        }
+
+        .d5 .q-text {
+            color: #064e3b;
+        }
+
+        .d5 .option {
+            background: #f0fdf4;
+            border-color: rgba(16, 185, 129, 0.15);
+            color: #064e3b;
+        }
+
+        .d5 .option:hover {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+
+        .d5 .option.selected {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+        }
+
+        .d5 .nav-btn {
+            background: white;
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .d5 .nav-btn:hover {
+            border-color: #10b981;
+        }
+
+        .d5 .submit-btn {
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: white;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+        }
+
+        /* ===== DESIGN 6: Orange Warm ===== */
+        .d6 {
+            background: linear-gradient(180deg, #ffedd5 0%, #fff7ed 100%);
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d6 .header {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        .d6 .timer {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            color: white;
+        }
+
+        .d6 .student-name {
+            color: #7c2d12;
+        }
+
+        .d6 .logout-btn {
+            background: white;
+            color: #ea580c;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .d6 .question-card {
+            background: white;
+            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.1);
+        }
+
+        .d6 .q-number {
+            color: #f97316;
+        }
+
+        .d6 .q-text {
+            color: #7c2d12;
+        }
+
+        .d6 .option {
+            background: #fff7ed;
+            border-color: rgba(249, 115, 22, 0.15);
+            color: #7c2d12;
+        }
+
+        .d6 .option:hover {
+            border-color: #f97316;
+            background: #ffedd5;
+        }
+
+        .d6 .option.selected {
+            border-color: #f97316;
+            background: linear-gradient(135deg, #fed7aa, #ffedd5);
+        }
+
+        .d6 .nav-btn {
+            background: white;
+            color: #ea580c;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .d6 .nav-btn:hover {
+            border-color: #f97316;
+        }
+
+        .d6 .submit-btn {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            color: white;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>QuizPlayer Designs</h1>
+        <p class="subtitle">Full-screen • Fixed header • Previous/Next + Submit buttons</p>
+
+        <!-- DESIGN 1 -->
+        <div class="section-title">Design 1: Soft Blue (Current Theme)</div>
+        <div class="mockup">
+            <div class="d1">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESIGN 2 -->
+        <div class="section-title">Design 2: Dark Mode</div>
+        <div class="mockup">
+            <div class="d2">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESIGN 3 -->
+        <div class="section-title">Design 3: Minimal White</div>
+        <div class="mockup">
+            <div class="d3">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESIGN 4 -->
+        <div class="section-title">Design 4: Purple Gradient</div>
+        <div class="mockup">
+            <div class="d4">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESIGN 5 -->
+        <div class="section-title">Design 5: Green Fresh</div>
+        <div class="mockup">
+            <div class="d5">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESIGN 6 -->
+        <div class="section-title">Design 6: Orange Warm</div>
+        <div class="mockup">
+            <div class="d6">
+                <div class="header">
+                    <div class="left">
+                        <div class="timer">⏱ 02:45</div>
+                        <span class="student-name">👤 John Student</span>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-card">
+                        <div class="q-number">Question 3</div>
+                        <div class="q-text">What is the capital of France?</div>
+                        <div class="options">
+                            <div class="option">A. London</div>
+                            <div class="option selected">B. Paris</div>
+                            <div class="option">C. Berlin</div>
+                            <div class="option">D. Madrid</div>
+                        </div>
+                        <div class="button-row">
+                            <button class="nav-btn">← Previous</button>
+                            <button class="submit-btn">Submit Answer</button>
+                            <button class="nav-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

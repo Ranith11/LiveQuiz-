@@ -1,0 +1,440 @@
+/* StudentDashboard.css - Forest Green Theme */
+
+/* ========== CSS Variables ========== */
+:root {
+    --forest-primary: #22c55e;
+    --forest-primary-dark: #16a34a;
+    --forest-bg-light: #f0fdf4;
+    --forest-bg-medium: #dcfce7;
+    --forest-text-dark: #14532d;
+    --forest-text-medium: #166534;
+    --forest-card: #ffffff;
+    --forest-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --forest-shadow-hover: 0 8px 32px rgba(34, 197, 94, 0.15);
+    --forest-radius: 20px;
+    --forest-radius-sm: 14px;
+}
+
+/* ========== Container ========== */
+.student-dash {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--forest-bg-light) 0%, var(--forest-bg-medium) 50%, var(--forest-bg-light) 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ========== Header ========== */
+.sd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+}
+
+.sd-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.sd-logo-icon {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, var(--forest-primary), var(--forest-primary-dark));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+}
+
+.sd-logo-text {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--forest-text-dark);
+}
+
+.sd-user-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--forest-card);
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sd-username {
+    font-weight: 600;
+    color: var(--forest-text-medium);
+}
+
+.sd-logout-btn {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid var(--forest-bg-medium);
+    border-radius: 8px;
+    color: var(--forest-text-medium);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sd-logout-btn:hover {
+    background: var(--forest-bg-light);
+    border-color: var(--forest-primary);
+    color: var(--forest-primary);
+}
+
+/* ========== Main Content ========== */
+.sd-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 32px 48px;
+}
+
+/* ========== Hero Join Card ========== */
+.sd-hero-card {
+    background: var(--forest-card);
+    border: 2px solid var(--forest-primary);
+    border-radius: 28px;
+    padding: 52px;
+    text-align: center;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.12);
+}
+
+.sd-hero-card h1 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    color: var(--forest-text-dark);
+}
+
+.sd-hero-card p {
+    color: var(--forest-text-medium);
+    font-size: 16px;
+    margin: 0 0 28px 0;
+}
+
+.sd-join-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.sd-join-input {
+    width: 300px;
+    padding: 18px 24px;
+    border: 2px solid var(--forest-primary);
+    border-radius: 16px;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 6px;
+    background: var(--forest-bg-light);
+    color: var(--forest-text-dark);
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.sd-join-input::placeholder {
+    letter-spacing: 2px;
+    color: #86efac;
+}
+
+.sd-join-input:focus {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+.sd-join-btn {
+    padding: 18px 40px;
+    background: linear-gradient(135deg, var(--forest-primary), var(--forest-primary-dark));
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+    transition: all 0.3s;
+}
+
+.sd-join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(34, 197, 94, 0.45);
+}
+
+/* ========== Grid Layout ========== */
+.sd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .sd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-header {
+        padding: 16px 20px;
+    }
+
+    .sd-main {
+        padding: 16px 20px 32px;
+    }
+
+    .sd-hero-card {
+        padding: 32px 20px;
+    }
+
+    .sd-join-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sd-join-input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ========== Card Base ========== */
+.sd-card {
+    background: var(--forest-card);
+    border-radius: var(--forest-radius);
+    padding: 28px;
+    box-shadow: var(--forest-shadow);
+}
+
+.sd-card h3 {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: var(--forest-text-dark);
+}
+
+/* ========== Quiz Items ========== */
+.sd-quiz-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sd-quiz-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: var(--forest-bg-light);
+    border-radius: var(--forest-radius-sm);
+    margin-bottom: 12px;
+    border-left: 4px solid var(--forest-primary);
+    transition: all 0.2s;
+}
+
+.sd-quiz-item:hover {
+    background: var(--forest-bg-medium);
+    transform: translateX(4px);
+}
+
+.sd-quiz-title {
+    font-weight: 700;
+    color: var(--forest-text-dark);
+    font-size: 16px;
+}
+
+.sd-quiz-meta {
+    font-size: 13px;
+    color: var(--forest-text-medium);
+    margin-top: 4px;
+}
+
+.sd-quiz-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sd-live-badge {
+    background: var(--forest-primary);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    animation: sd-pulse 2s infinite;
+}
+
+@keyframes sd-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.sd-join-quiz-btn {
+    padding: 10px 22px;
+    background: linear-gradient(135deg, var(--forest-primary), var(--forest-primary-dark));
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sd-join-quiz-btn:hover {
+    transform: scale(1.05);
+}
+
+.sd-empty-state {
+    text-align: center;
+    padding: 32px;
+    color: var(--forest-text-medium);
+}
+
+/* ========== Stats Card - Split Design ========== */
+.sd-stats-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+.sd-stats-section {
+    padding: 24px 28px;
+}
+
+.sd-stats-section:first-child {
+    border-bottom: 2px solid var(--forest-bg-light);
+}
+
+.sd-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--forest-text-medium);
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Overall Stats */
+.sd-overall-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.sd-stat-box {
+    flex: 1;
+    background: var(--forest-bg-light);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    border: 2px solid var(--forest-bg-medium);
+}
+
+.sd-stat-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--forest-primary);
+    line-height: 1;
+}
+
+.sd-stat-label {
+    font-size: 13px;
+    color: var(--forest-text-medium);
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Recent Results */
+.sd-recent-results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sd-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: var(--forest-bg-light);
+    border-radius: 12px;
+    border-left: 3px solid var(--forest-primary);
+}
+
+.sd-result-name {
+    font-weight: 600;
+    color: var(--forest-text-dark);
+    font-size: 14px;
+}
+
+.sd-result-score {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sd-score-text {
+    font-weight: 700;
+    color: var(--forest-primary);
+    font-size: 15px;
+}
+
+.sd-score-bar {
+    width: 80px;
+    height: 8px;
+    background: var(--forest-bg-medium);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sd-score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--forest-primary), var(--forest-primary-dark));
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.sd-no-results {
+    text-align: center;
+    padding: 20px;
+    color: var(--forest-text-medium);
+    font-size: 14px;
+}
+
+/* ========== Message ========== */
+.sd-message {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--forest-primary), var(--forest-primary-dark));
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+    z-index: 1000;
+    animation: sd-slideUp 0.3s ease;
+}
+
+@keyframes sd-slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

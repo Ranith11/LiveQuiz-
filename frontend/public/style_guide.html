@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveQuiz+ Background Styles</title>
+    <style>
+        :root {
+            --card: #f0f9ff;
+            --card-border: #bae6fd;
+            --card-header: #0369a1;
+            --accent: #0ea5e9;
+            --text-muted: #64748b;
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #1e293b;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 40px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .desc {
+            color: #94a3b8;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        .preview {
+            padding: 40px;
+            border-radius: 16px;
+            min-height: 180px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 24px;
+            max-width: 350px;
+        }
+
+        .card h3 {
+            margin: 0 0 12px 0;
+            color: var(--card-header);
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin: 0 0 16px 0;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .card-dark {
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: var(--radius);
+            padding: 24px;
+            max-width: 350px;
+        }
+
+        .card-dark h3 {
+            margin: 0 0 12px 0;
+            color: #f1f5f9;
+            font-weight: 700;
+        }
+
+        .card-dark p {
+            color: #94a3b8;
+            margin: 0 0 16px 0;
+            font-size: 0.9rem;
+        }
+
+        .btn-cyan {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .card-white {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            padding: 24px;
+            max-width: 350px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-white h3 {
+            margin: 0 0 12px 0;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        .card-white p {
+            color: #64748b;
+            margin: 0 0 16px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <h1>Professional Background Styles</h1>
+            <p class="subtitle">12 background options for your LiveQuiz+ website. Pick your favorite!</p>
+        </div>
+
+        <!-- OPTION 1 -->
+        <div>
+            <div class="section-title">Option 1: Solid Light Gray</div>
+            <p class="desc">Clean and minimal. Professional standard.</p>
+            <div class="preview" style="background: #f0f4f8;">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Crisp cards on solid backgrounds.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 2 -->
+        <div>
+            <div class="section-title">Option 2: Subtle Blue Gradient</div>
+            <p class="desc">Light blue to white. Adds depth.</p>
+            <div class="preview" style="background: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 50%, #ffffff 100%);">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Gradient adds visual interest.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 3 -->
+        <div>
+            <div class="section-title">Option 3: Cool Gray to Lavender</div>
+            <p class="desc">Modern with soft purple touch.</p>
+            <div class="preview" style="background: linear-gradient(180deg, #f1f5f9 0%, #faf5ff 100%);">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Subtle color shift for premium feel.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 4 -->
+        <div>
+            <div class="section-title">Option 4: Dot Pattern</div>
+            <p class="desc">Textured with subtle dots.</p>
+            <div class="preview"
+                style="background-color: #f8fafc; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Pattern adds depth without overwhelming.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 5 -->
+        <div>
+            <div class="section-title">Option 5: Mesh Gradient (Trendy)</div>
+            <p class="desc">Multi-color mesh, vibrant and modern.</p>
+            <div class="preview" style="background: linear-gradient(135deg, #dbeafe 0%, #fae8ff 50%, #e0f2fe 100%);">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Eye-catching yet professional.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 6 -->
+        <div>
+            <div class="section-title">Option 6: Dark Professional</div>
+            <p class="desc">High contrast dark mode.</p>
+            <div class="preview" style="background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);">
+                <div class="card-dark">
+                    <h3>Sample Card</h3>
+                    <p>Dark mode with bright accents.</p>
+                    <button class="btn btn-cyan">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 7 -->
+        <div>
+            <div class="section-title">Option 7: Warm Cream</div>
+            <p class="desc">Soft, warm, and inviting.</p>
+            <div class="preview" style="background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);">
+                <div class="card-white">
+                    <h3>Sample Card</h3>
+                    <p>Warm tones feel welcoming.</p>
+                    <button class="btn" style="background: #f59e0b;">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 8 -->
+        <div>
+            <div class="section-title">Option 8: Mint Fresh</div>
+            <p class="desc">Cool and refreshing green tones.</p>
+            <div class="preview" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                <div class="card-white">
+                    <h3>Sample Card</h3>
+                    <p>Fresh and calming aesthetic.</p>
+                    <button class="btn" style="background: #10b981;">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 9 -->
+        <div>
+            <div class="section-title">Option 9: Rose Soft</div>
+            <p class="desc">Gentle pink gradient. Friendly feel.</p>
+            <div class="preview" style="background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);">
+                <div class="card-white">
+                    <h3>Sample Card</h3>
+                    <p>Soft and approachable design.</p>
+                    <button class="btn" style="background: #f43f5e;">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 10 -->
+        <div>
+            <div class="section-title">Option 10: Grid Lines</div>
+            <p class="desc">Subtle grid pattern. Tech/engineering feel.</p>
+            <div class="preview"
+                style="background-color: #f8fafc; background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px); background-size: 40px 40px;">
+                <div class="card">
+                    <h3>Sample Card</h3>
+                    <p>Grid adds structure and precision.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 11 -->
+        <div>
+            <div class="section-title">Option 11: Aurora Gradient</div>
+            <p class="desc">Vibrant multi-color. Modern SaaS style.</p>
+            <div class="preview"
+                style="background: linear-gradient(135deg, #a5f3fc 0%, #c4b5fd 33%, #fbcfe8 66%, #fef3c7 100%);">
+                <div class="card-white">
+                    <h3>Sample Card</h3>
+                    <p>Bold and memorable gradient.</p>
+                    <button class="btn" style="background: #8b5cf6;">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 12 -->
+        <div>
+            <div class="section-title">Option 12: Pure White</div>
+            <p class="desc">Ultra clean. Maximum simplicity.</p>
+            <div class="preview" style="background: #ffffff; border: 1px solid #e2e8f0;">
+                <div class="card" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <h3>Sample Card</h3>
+                    <p>Cards stand out on pure white.</p>
+                    <button class="btn">Action</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
